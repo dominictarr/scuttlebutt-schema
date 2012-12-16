@@ -1,7 +1,7 @@
 var parserx      = require('parse-regexp')
 
 module.exports = function (schema) {
-  if('function' == schema)
+  if('function' == typeof schema)
     return schema
 
   var rules = []

@@ -14,7 +14,7 @@ module.exports = function (schema) {
       var r = rules[i]
       var m = key.match(r.rx)
       if(m && m.index === 0)
-        return r.fn
+        return r.fn(key)
     }
   }
 

@@ -4,7 +4,7 @@ var sync = module.exports = function (schema, connect) {
     if('function' == typeof tail)
       cb = tail, tail = true
 
-    var scuttlebutt = schema(name)()
+    var scuttlebutt = schema(name)
     var es = scuttlebutt.createStream()
     var stream = connect(name)
 

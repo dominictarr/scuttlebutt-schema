@@ -48,8 +48,9 @@ function cached (open, onCache) {
     }
     var clone
     var scuttlebutt = open(name, tail, function (err, scuttlebutt) {
+      if(err) return cb(err)
       scuttlebutt.name = name
-      cb(err, clone || scuttlebutt)
+      cb(null, clone || scuttlebutt)
     })
 
     //will callback an error

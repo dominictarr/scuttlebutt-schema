@@ -7,10 +7,17 @@ var exports = module.exports = function (schema) {
   if('function' == typeof schema)
     return schema
 
+  if(!schema)
+    throw new Error('expect a function, or object of functions that return scuttlebutts')
+
   var rules = []
   for (var p in schema) {
-    rules.push({rx: parserx(p) || p, fn: schema[p]})
+    if('function' === typeof schema[p])
+      rules.push({rx: parserx(p) || p, fn: schema[p]})
   }
+
+  if(!rules.length)
+    throw new Error('cannot have empty schema')
 
   function match (key) {
     if('object' === typeof key) return key

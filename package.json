@@ -1,6 +1,6 @@
 {
   "name": "scuttlebutt-schema",
-  "version": "1.1.2",
+  "version": "1.2.0",
   "homepage": "https://github.com/dominictarr/scuttlebutt-schema",
   "repository": {
     "type": "git",

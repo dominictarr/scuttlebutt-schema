@@ -13,6 +13,7 @@ var exports = module.exports = function (schema) {
   }
 
   function match (key) {
+    if('object' === typeof key) return key
     for (var i in rules) {
       var r = rules[i]
       var m = key.match(r.rx)
